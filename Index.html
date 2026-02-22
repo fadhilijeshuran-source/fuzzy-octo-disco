@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>He's Sorry, Princess 💗</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --pink: #ff8fab;
+  --light-pink: #ffc8dd;
+  --soft: #fff0f5;
+  --deep: #c9184a;
+  --yellow: #ffd166;
+  --sky: #a8daff;
+  --mint: #b7e4c7;
+  --lavender: #cdb4db;
+  --bg: #fff5f8;
+}
+
+body {
+  background: var(--bg);
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Floating hearts background */
+.bg-hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-heart {
+  position: absolute;
+  font-size: var(--s);
+  animation: floatHeart var(--d) ease-in-out infinite;
+  opacity: 0;
+  bottom: -40px;
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(0) rotate(0deg) scale(0.5); opacity: 0; }
+  15% { opacity: 0.6; }
+  85% { opacity: 0.3; }
+  100% { transform: translateY(-110vh) rotate(20deg) scale(1); opacity: 0; }
+}
+
+/* Header */
+.hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 52px 24px 24px;
+  animation: fadeDown 1s ease both;
+}
+
+@keyframes fadeDown {
+  from { opacity:0; transform: translateY(-30px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+.hero .tag {
+  display: inline-block;
+  background: var(--pink);
+  color: white;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.6rem, 8vw, 4.5rem);
+  color: var(--deep);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1rem;
+  color: #b5688a;
+  font-weight: 300;
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Cards grid */
+.cards {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.card {
+  background: white;
+  border-radius: 28px;
+  padding: 32px 24px 28px;
+  box-shadow: 0 8px 32px rgba(201,24,74,0.08);
+  border: 2px solid rgba(255,143,171,0.2);
+  text-align: center;
+  animation: cardPop 0.7s cubic-bezier(0.34,1.56,0.64,1) both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(201,24,74,0.15);
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.25s; }
+.card:nth-child(3) { animation-delay: 0.4s; }
+.card:nth-child(4) { animation-delay: 0.55s; }
+.card:nth-child(5) { animation-delay: 0.7s; }
+
+@keyframes cardPop {
+  from { opacity:0; transform: scale(0.7) translateY(20px); }
+  to { opacity:1; transform: scale(1) translateY(0); }
+}
+
+.card .corner-heart {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 20px;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+/* SVG character scene */
+.char-scene {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 16px;
+}
+
+.card h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.3rem;
+  color: var(--deep);
+  margin-bottom: 6px;
+}
+
+.card .sorry-quote {
+  font-size: 0.88rem;
+  color: #b5688a;
+  font-style: italic;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Bottom message */
+.bottom-msg {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px 24px 60px;
+  animation: fadeUp 1s ease 1s both;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+.bottom-msg .big-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  color: var(--deep);
+  margin-bottom: 10px;
+}
+
+.bottom-msg .sub {
+  font-size: 0.95rem;
+  color: #b5688a;
+  font-weight: 300;
+}
+
+.hearts-bounce {
+  font-size: 2rem;
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hearts-bounce span {
+  display: inline-block;
+  animation: heartJump 1.2s ease-in-out infinite;
+}
+
+.hearts-bounce span:nth-child(2) { animation-delay: 0.2s; }
+.hearts-bounce span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes heartJump {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+/* ==================
+   TOOTHLESS (HTTYD)
+   ================== */
+.toothless-wrap {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.tooth-body {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 60px;
+  background: #1a1a2a;
+  border-radius: 30px 30px 20px 20px;
+  border: 2px solid #0a0a15;
+  animation: toothlessWiggle 2s ease-in-out infinite;
+}
+
+@keyframes toothlessWiggle {
+  0%,100% { transform: translateX(-50%) rotate(-1deg); }
+  50% { transform: translateX(-50%) rotate(1deg); }
+}
+
+.tooth-wing {
+  position: absolute;
+  bottom: 30px;
+  width: 44px;
+  height: 50px;
+  background: #1a1a2a;
+  border: 2px solid #0a0a15;
+  border-radius: 40% 60% 20% 80%;
+}
+
+.tooth-wing.left {
+  left: 8px;
+  transform: rotate(-20deg);
+  transform-origin: bottom right;
+  animation: wingFlapLeft 1.5s ease-in-out infinite;
+}
+
+.tooth-wing.right {
+  right: 8px;
+  transform: rotate(20deg) scaleX(-1);
+  transform-origin: bottom left;
+  animation: wingFlapRight 1.5s ease-in-out infinite;
+}
+
+@keyframes wingFlapLeft {
+  0%,100% { transform: rotate(-20deg); }
+  50% { transform: rotate(-35deg); }
+}
+
+@keyframes wingFlapRight {
+  0%,100% { transform: rotate(20deg) scaleX(-1); }
+  50% { transform: rotate(35deg) scaleX(-1); }
+}
+
+.tooth-tail {
+  position: absolute;
+  bottom: 14px;
+  right: 4px;
+  width: 36px;
+  height: 14px;
+  background: #1a1a2a;
+  border-radius: 0 8px 8px 0;
+  border: 2px solid #0a0a15;
+}
+
+.tooth-tail::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: -6px;
+  width: 14px;
+  height: 12px;
+  background: #cc3300;
+  border-radius: 6px 8px 4px 6px;
+  transform: rotate(15deg);
+}
+
+.tooth-head {
+  position: absolute;
+  bottom: 74px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px;
+  height: 56px;
+  background: #1a1a2a;
+  border-radius: 44% 44% 36% 36%;
+  border: 2px solid #0a0a15;
+  animation: toothlessHead 3s ease-in-out infinite;
+}
+
+@keyframes toothlessHead {
+  0%,100% { transform: translateX(-50%) rotate(0deg); }
+  40% { transform: translateX(-50%) rotate(-4deg); }
+  70% { transform: translateX(-50%) rotate(3deg); }
+}
+
+.tooth-eyes-row {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 14px;
+}
+
+.tooth-eye {
+  width: 18px;
+  height: 18px;
+  background: #00cc88;
+  border-radius: 50%;
+  border: 2px solid #009966;
+  position: relative;
+  animation: toothEyeGlow 2s ease-in-out infinite;
+}
+
+@keyframes toothEyeGlow {
+  0%,100% { box-shadow: 0 0 6px #00cc88; }
+  50% { box-shadow: 0 0 14px #00ffaa; }
+}
+
+.tooth-pupil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 8px;
+  height: 14px;
+  background: #111;
+  border-radius: 50%;
+  animation: toothPupilSlit 3s ease-in-out infinite;
+}
+
+@keyframes toothPupilSlit {
+  0%,100% { width: 8px; }
+  50% { width: 12px; }
+}
+
+.tooth-ear {
+  position: absolute;
+  top: -10px;
+  width: 14px;
+  height: 18px;
+  background: #1a1a2a;
+  border: 2px solid #0a0a15;
+  border-radius: 50% 50% 0 0;
+}
+
+.tooth-ear.left { left: 10px; transform: rotate(-15deg); }
+.tooth-ear.right { right: 10px; transform: rotate(15deg); }
+
+.tooth-smile {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 12px;
+  border-bottom: 3px solid #444;
+  border-radius: 0 0 14px 14px;
+}
+
+.tooth-legs { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); display: flex; gap: 14px; }
+.tooth-leg { width: 16px; height: 22px; background: #1a1a2a; border: 2px solid #0a0a15; border-radius: 4px 4px 8px 8px; }
+.tooth-claw { display: flex; gap: 2px; margin-top: -2px; }
+.tooth-claw-toe { width: 5px; height: 7px; background: #333; border-radius: 2px 2px 4px 4px; }
+
+.tooth-fire {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 22px;
+  animation: firePulse 0.8s ease-in-out infinite;
+}
+
+@keyframes firePulse {
+  0%,100% { transform: scale(1) rotate(-5deg); }
+  50% { transform: scale(1.2) rotate(5deg); }
+}
+
+/* ==================
+   THE CROODS
+   ================== */
+.croods-wrap {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+/* Grug (dad) */
+.grug-body {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 52px;
+  height: 64px;
+  background: #8b5e3c;
+  border-radius: 10px 10px 6px 6px;
+  border: 2px solid #6b3e1c;
+  animation: grugSway 2.5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes grugSway {
+  0%,100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+.grug-head {
+  position: absolute;
+  bottom: 68px;
+  left: 6px;
+  width: 60px;
+  height: 56px;
+  background: #8b5e3c;
+  border-radius: 50%;
+  border: 2px solid #6b3e1c;
+}
+
+.grug-brow {
+  position: absolute;
+  top: 8px;
+  left: 4px;
+  right: 4px;
+  height: 10px;
+  background: #4a2a0a;
+  border-radius: 8px 8px 0 0;
+}
+
+.grug-eyes-row {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.grug-eye {
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #333;
+  position: relative;
+}
+
+.grug-pupil {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  background: #111;
+  border-radius: 50%;
+}
+
+.grug-nose {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 10px;
+  background: #7a4e2c;
+  border-radius: 50%;
+}
+
+.grug-smile {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 10px;
+  border-bottom: 3px solid #4a2a0a;
+  border-radius: 0 0 14px 14px;
+}
+
+.grug-arm {
+  position: absolute;
+  width: 14px;
+  height: 44px;
+  background: #8b5e3c;
+  border: 2px solid #6b3e1c;
+  border-radius: 7px;
+  bottom: 20px;
+}
+
+.grug-arm.left { left: -12px; transform: rotate(20deg); animation: grugArmWave 1.8s ease-in-out infinite; transform-origin: top; }
+@keyframes grugArmWave { 0%,100% { transform: rotate(20deg); } 50% { transform: rotate(45deg); } }
+.grug-arm.right { right: -12px; transform: rotate(-10deg); }
+
+.grug-club {
+  position: absolute;
+  bottom: 42px;
+  left: -10px;
+  font-size: 18px;
+  animation: clubWave 1.8s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+@keyframes clubWave {
+  0%,100% { transform: rotate(-20deg); }
+  50% { transform: rotate(0deg); }
+}
+
+.grug-legs { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; }
+.grug-leg { width: 18px; height: 14px; background: #6b3e1c; border: 2px solid #4a2a0a; border-radius: 4px 4px 8px 8px; }
+
+/* Eep (girl) */
+.eep-body {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 42px;
+  height: 54px;
+  background: #c8742a;
+  border-radius: 10px 10px 6px 6px;
+  border: 2px solid #a05010;
+  animation: eepBob 2s ease-in-out infinite;
+}
+
+@keyframes eepBob {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.eep-head {
+  position: absolute;
+  bottom: 58px;
+  right: 6px;
+  width: 52px;
+  height: 48px;
+  background: #c8742a;
+  border-radius: 50%;
+  border: 2px solid #a05010;
+}
+
+.eep-hair {
+  position: absolute;
+  top: -8px;
+  left: -4px;
+  right: -4px;
+  height: 24px;
+  background: #8b2000;
+  border-radius: 20px 20px 0 0;
+}
+
+.eep-eyes-row {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.eep-eye {
+  width: 11px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #333;
+  position: relative;
+}
+
+.eep-pupil {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 5px;
+  height: 6px;
+  background: #333;
+  border-radius: 50%;
+}
+
+.eep-smile {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 8px;
+  border-bottom: 2.5px solid #7a3010;
+  border-radius: 0 0 10px 10px;
+}
+
+.eep-arm {
+  position: absolute;
+  width: 11px;
+  height: 36px;
+  background: #c8742a;
+  border: 2px solid #a05010;
+  border-radius: 6px;
+  bottom: 18px;
+}
+
+.eep-arm.left { left: -9px; transform: rotate(15deg); animation: eepArmWave 1.6s ease-in-out infinite; transform-origin: top; }
+@keyframes eepArmWave { 0%,100% { transform: rotate(15deg); } 50% { transform: rotate(35deg); } }
+.eep-arm.right { right: -9px; transform: rotate(-10deg); }
+
+.eep-heart {
+  position: absolute;
+  top: 4px;
+  right: -6px;
+  font-size: 18px;
+  animation: eepHeartFloat 2s ease-in-out infinite;
+}
+
+@keyframes eepHeartFloat {
+  0%,100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+.eep-legs { position: absolute; bottom: 0; right: 2px; display: flex; gap: 5px; }
+.eep-leg { width: 15px; height: 13px; background: #a05010; border: 2px solid #7a3010; border-radius: 4px 4px 8px 8px; }
+
+
+
+/* SpongeBob */
+.sponge-wrap {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.sponge-body {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 80px;
+  background: #f5d020;
+  border-radius: 10px;
+  border: 3px solid #c8a800;
+  animation: spongeWobble 2s ease-in-out infinite;
+}
+
+@keyframes spongeWobble {
+  0%,100% { transform: translateX(-50%) rotate(-2deg); }
+  50% { transform: translateX(-50%) rotate(2deg); }
+}
+
+.sponge-hole {
+  position: absolute;
+  background: rgba(200,168,0,0.3);
+  border-radius: 50%;
+}
+
+.sponge-head {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px;
+  height: 62px;
+  background: #f5d020;
+  border-radius: 12px;
+  border: 3px solid #c8a800;
+  animation: spongeWobble 2s ease-in-out infinite;
+}
+
+.sponge-eyes-row {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.sponge-eye {
+  width: 18px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.sponge-pupil {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 9px;
+  background: #1a1aff;
+  border-radius: 50%;
+  animation: spongeEyeLook 3s ease-in-out infinite;
+}
+
+@keyframes spongeEyeLook {
+  0%,100% { transform: translateX(-50%); }
+  50% { transform: translateX(-30%); }
+}
+
+.sponge-smile {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 14px;
+  border-bottom: 3px solid #8b4513;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-radius: 0 0 20px 20px;
+}
+
+.sponge-teeth {
+  position: absolute;
+  bottom: 5px;
+  left: 6px;
+  display: flex;
+  gap: 2px;
+}
+
+.sponge-tooth {
+  width: 8px;
+  height: 10px;
+  background: white;
+  border: 1.5px solid #ccc;
+  border-radius: 0 0 3px 3px;
+}
+
+.sponge-arm {
+  position: absolute;
+  width: 14px;
+  height: 45px;
+  background: #f5d020;
+  border: 2px solid #c8a800;
+  border-radius: 7px;
+  bottom: 30px;
+}
+
+.sponge-arm.left {
+  left: 18px;
+  transform: rotate(20deg);
+  transform-origin: top center;
+  animation: spongeArmLeft 1.5s ease-in-out infinite;
+}
+
+@keyframes spongeArmLeft {
+  0%,100% { transform: rotate(20deg); }
+  50% { transform: rotate(40deg); }
+}
+
+.sponge-arm.right {
+  right: 18px;
+  transform: rotate(-15deg);
+}
+
+.sponge-flower {
+  position: absolute;
+  bottom: 72px;
+  left: 8px;
+  font-size: 22px;
+  animation: flowerSway 2s ease-in-out infinite;
+}
+
+@keyframes flowerSway {
+  0%,100% { transform: rotate(-10deg); }
+  50% { transform: rotate(5deg); }
+}
+
+.sponge-pants {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 66px;
+  height: 30px;
+  background: #8b4513;
+  border-radius: 0 0 8px 8px;
+}
+
+.sponge-tie {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 20px;
+  background: #cc0000;
+  clip-path: polygon(50% 0%, 100% 40%, 70% 100%, 30% 100%, 0% 40%);
+}
+
+.sponge-legs {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 18px;
+}
+
+.sponge-leg {
+  width: 14px;
+  height: 22px;
+  background: #f5d020;
+  border: 2px solid #c8a800;
+  border-radius: 4px;
+}
+
+.sponge-shoe {
+  width: 22px;
+  height: 10px;
+  background: #333;
+  border-radius: 6px;
+  margin-top: -2px;
+  margin-left: -4px;
+}
+
+/* Tom */
+.tom-wrap {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.tom-body {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 62px;
+  height: 72px;
+  background: #7a8fb5;
+  border-radius: 14px 14px 8px 8px;
+  border: 2px solid #5a6f95;
+}
+
+.tom-tummy {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 44px;
+  background: #d4c5b0;
+  border-radius: 10px;
+}
+
+.tom-head {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 66px;
+  background: #7a8fb5;
+  border-radius: 50% 50% 40% 40%;
+  border: 2px solid #5a6f95;
+  animation: tomNod 3s ease-in-out infinite;
+}
+
+@keyframes tomNod {
+  0%,100% { transform: translateX(-50%) rotate(0deg); }
+  30% { transform: translateX(-50%) rotate(-3deg); }
+  70% { transform: translateX(-50%) rotate(3deg); }
+}
+
+.tom-face-light {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 36px;
+  background: #d4c5b0;
+  border-radius: 50%;
+}
+
+.tom-eyes-row {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 14px;
+}
+
+.tom-eye {
+  width: 14px;
+  height: 16px;
+  background: #ffff88;
+  border-radius: 50%;
+  border: 2px solid #333;
+  position: relative;
+}
+
+.tom-pupil {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 6px;
+  height: 7px;
+  background: #222;
+  border-radius: 50%;
+  animation: tomBlink 4s ease-in-out infinite;
+}
+
+@keyframes tomBlink {
+  0%,90%,100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+.tom-nose {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 7px;
+  background: #e88;
+  border-radius: 50%;
+}
+
+.tom-whiskers {
+  position: absolute;
+  bottom: 20px;
+}
+
+.tom-whisker {
+  height: 1.5px;
+  background: #666;
+  border-radius: 2px;
+  position: absolute;
+}
+
+.tom-ears {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tom-ear {
+  width: 22px;
+  height: 24px;
+  background: #7a8fb5;
+  border-radius: 50% 50% 0 0;
+  border: 2px solid #5a6f95;
+  position: relative;
+}
+
+.tom-ear::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 0;
+  background: #e8a0b0;
+  border-radius: 50% 50% 0 0;
+}
+
+.tom-arm {
+  position: absolute;
+  width: 14px;
+  height: 42px;
+  background: #7a8fb5;
+  border: 2px solid #5a6f95;
+  border-radius: 7px;
+  bottom: 28px;
+}
+
+.tom-arm.left {
+  left: 14px;
+  animation: tomArmWave 1.8s ease-in-out infinite;
+  transform-origin: top;
+}
+
+@keyframes tomArmWave {
+  0%,100% { transform: rotate(15deg); }
+  50% { transform: rotate(40deg); }
+}
+
+.tom-arm.right { right: 14px; transform: rotate(-10deg); }
+
+.tom-heart {
+  position: absolute;
+  bottom: 80px;
+  left: 6px;
+  font-size: 20px;
+  animation: tomHeartPop 1.5s ease-in-out infinite;
+}
+
+@keyframes tomHeartPop {
+  0%,100% { transform: scale(1) rotate(-10deg); }
+  50% { transform: scale(1.3) rotate(5deg); }
+}
+
+.tom-tail {
+  position: absolute;
+  bottom: 20px;
+  right: 6px;
+  width: 30px;
+  height: 50px;
+  border-right: 4px solid #7a8fb5;
+  border-bottom: 4px solid #7a8fb5;
+  border-radius: 0 0 20px 0;
+  animation: tailWag 1.2s ease-in-out infinite;
+  transform-origin: top right;
+}
+
+@keyframes tailWag {
+  0%,100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+
+.tom-legs { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); display: flex; gap: 14px; }
+.tom-leg { width: 16px; height: 18px; background: #7a8fb5; border: 2px solid #5a6f95; border-radius: 4px 4px 8px 8px; }
+
+/* Scooby */
+.scooby-wrap {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.scooby-body {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px;
+  height: 66px;
+  background: #8b6914;
+  border-radius: 14px;
+  border: 2px solid #6b4a0a;
+  animation: scoobyWag 0.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes scoobyWag {
+  0%,100% { transform: translateX(-50%) rotate(-1deg); }
+  50% { transform: translateX(-50%) rotate(1deg); }
+}
+
+.scooby-spots {
+  position: absolute;
+  inset: 6px;
+}
+
+.scooby-spot {
+  position: absolute;
+  background: #5a3a08;
+  border-radius: 50%;
+}
+
+.scooby-head {
+  position: absolute;
+  bottom: 76px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 64px;
+  background: #8b6914;
+  border-radius: 40% 40% 46% 46%;
+  border: 2px solid #6b4a0a;
+}
+
+.scooby-snout {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 26px;
+  background: #c49a3c;
+  border-radius: 50%;
+  border: 2px solid #6b4a0a;
+}
+
+.scooby-nose {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 10px;
+  background: #222;
+  border-radius: 50%;
+}
+
+.scooby-mouth-smile {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 8px;
+  border-bottom: 2.5px solid #6b4a0a;
+  border-radius: 0 0 12px 12px;
+}
+
+.scooby-eyes-row {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+.scooby-eye {
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #333;
+  position: relative;
+}
+
+.scooby-pupil {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 7px;
+  height: 8px;
+  background: #1a1a4a;
+  border-radius: 50%;
+}
+
+.scooby-ears {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.scooby-ear {
+  width: 20px;
+  height: 32px;
+  background: #6b4a0a;
+  border-radius: 4px 4px 8px 8px;
+  animation: earFlop 2s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.scooby-ear:first-child { animation-delay: 0.3s; }
+
+@keyframes earFlop {
+  0%,100% { transform: rotate(0deg); }
+  50% { transform: rotate(8deg); }
+}
+
+.scooby-collar {
+  position: absolute;
+  bottom: 76px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 62px;
+  height: 12px;
+  background: #1a88cc;
+  border-radius: 4px;
+  z-index: 3;
+}
+
+.scooby-tag {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #ffd700;
+  border-radius: 50%;
+}
+
+.scooby-paw {
+  position: absolute;
+  width: 20px;
+  height: 14px;
+  background: #8b6914;
+  border-radius: 8px;
+  border: 2px solid #6b4a0a;
+  bottom: 30px;
+}
+
+.scooby-paw.left { left: 8px; animation: pawWave 1.4s ease-in-out infinite; transform-origin: bottom right; }
+@keyframes pawWave { 0%,100% { transform: rotate(10deg); } 50% { transform: rotate(30deg); } }
+.scooby-paw.right { right: 8px; }
+
+.scooby-treat {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  animation: treatBounce 1.2s ease-in-out infinite;
+}
+
+@keyframes treatBounce {
+  0%,100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+.scooby-legs { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; }
+.scooby-leg { width: 18px; height: 20px; background: #8b6914; border: 2px solid #6b4a0a; border-radius: 6px 6px 10px 10px; }
+
+/* Bugs Bunny */
+.bugs-wrap {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.bugs-body {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 70px;
+  background: #c8c0b8;
+  border-radius: 14px 14px 8px 8px;
+  border: 2px solid #a89888;
+}
+
+.bugs-tummy {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 46px;
+  background: #f0ddd0;
+  border-radius: 10px;
+}
+
+.bugs-head {
+  position: absolute;
+  bottom: 78px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 66px;
+  height: 58px;
+  background: #c8c0b8;
+  border-radius: 50% 50% 44% 44%;
+  border: 2px solid #a89888;
+  animation: bugsChew 0.6s ease-in-out infinite;
+}
+
+@keyframes bugsChew {
+  0%,100% { transform: translateX(-50%); }
+  50% { transform: translateX(-50%) scaleY(0.97); }
+}
+
+.bugs-face {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 46px;
+  height: 32px;
+  background: #f0ddd0;
+  border-radius: 50%;
+}
+
+.bugs-eyes-row {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+.bugs-eye {
+  width: 14px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #333;
+  position: relative;
+}
+
+.bugs-pupil {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 7px;
+  height: 8px;
+  background: #111;
+  border-radius: 50%;
+  animation: bugsEyes 3s ease-in-out infinite;
+}
+
+@keyframes bugsEyes {
+  0%,100% { transform: translate(0,0); }
+  50% { transform: translate(2px,0); }
+}
+
+.bugs-nose {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 6px;
+  background: #e07070;
+  border-radius: 50%;
+}
+
+.bugs-mouth {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 8px;
+  border-bottom: 2px solid #a06050;
+  border-radius: 0 0 10px 10px;
+}
+
+.bugs-teeth {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1px;
+}
+
+.bugs-tooth {
+  width: 7px;
+  height: 8px;
+  background: white;
+  border: 1.5px solid #ccc;
+  border-radius: 0 0 3px 3px;
+}
+
+.bugs-ears {
+  position: absolute;
+  top: -52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 58px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bugs-ear {
+  width: 18px;
+  height: 56px;
+  background: #c8c0b8;
+  border: 2px solid #a89888;
+  border-radius: 50% 50% 0 0;
+  position: relative;
+  animation: earWiggle 2.5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.bugs-ear:first-child { animation-delay: 0.4s; }
+
+@keyframes earWiggle {
+  0%,100% { transform: rotate(-2deg); }
+  50% { transform: rotate(4deg); }
+}
+
+.bugs-ear::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  right: 3px;
+  bottom: 0;
+  background: #f0a0a8;
+  border-radius: 50% 50% 0 0;
+}
+
+.bugs-arm {
+  position: absolute;
+  width: 13px;
+  height: 40px;
+  background: #c8c0b8;
+  border: 2px solid #a89888;
+  border-radius: 7px;
+  bottom: 28px;
+}
+
+.bugs-arm.left { left: 12px; transform: rotate(15deg); animation: bugsArmWave 1.6s ease-in-out infinite; transform-origin: top; }
+@keyframes bugsArmWave { 0%,100% { transform: rotate(15deg); } 50% { transform: rotate(35deg); } }
+.bugs-arm.right { right: 12px; transform: rotate(-10deg); }
+
+.bugs-carrot {
+  position: absolute;
+  bottom: 66px;
+  left: 4px;
+  font-size: 20px;
+  animation: carrotWave 1.6s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+@keyframes carrotWave {
+  0%,100% { transform: rotate(-15deg); }
+  50% { transform: rotate(0deg); }
+}
+
+.bugs-gloves {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  bottom: 16px;
+}
+
+.bugs-gloves.left { left: 8px; }
+.bugs-gloves.right { right: 8px; }
+
+.bugs-legs { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; }
+.bugs-leg { width: 14px; height: 18px; background: #c8c0b8; border: 2px solid #a89888; border-radius: 4px; }
+.bugs-foot { width: 26px; height: 10px; background: #e8e0d8; border-radius: 8px; margin-left: -6px; border: 2px solid #a89888; }
+
+/* Penguins */
+.penguins-wrap {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+/* Penguin 1 */
+.penguin {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p1 { bottom: 10px; left: 12px; }
+.p2 { bottom: 10px; right: 12px; transform: scaleX(-1); }
+
+.pg-body {
+  width: 44px;
+  height: 54px;
+  background: #1a1a2e;
+  border-radius: 50% 50% 40% 40%;
+  border: 2px solid #0d0d1a;
+  position: relative;
+}
+
+.pg-tummy {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 36px;
+  background: white;
+  border-radius: 50%;
+}
+
+.pg-head {
+  width: 40px;
+  height: 38px;
+  background: #1a1a2e;
+  border-radius: 50%;
+  border: 2px solid #0d0d1a;
+  margin-bottom: -2px;
+  position: relative;
+}
+
+.pg-face {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 22px;
+  background: #f5d5a0;
+  border-radius: 50%;
+}
+
+.pg-eyes-row {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.pg-eye {
+  width: 9px;
+  height: 9px;
+  background: white;
+  border-radius: 50%;
+  border: 1.5px solid #333;
+  position: relative;
+}
+
+.pg-pupil {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 5px;
+  height: 5px;
+  background: #111;
+  border-radius: 50%;
+}
+
+.pg-beak {
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 6px;
+  background: #f0a030;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+.pg-wing {
+  position: absolute;
+  width: 12px;
+  height: 30px;
+  background: #1a1a2e;
+  border-radius: 6px;
+  bottom: 10px;
+}
+
+.pg-wing.left {
+  left: -10px;
+  animation: wingFlap 1.2s ease-in-out infinite;
+  transform-origin: top;
+}
+
+@keyframes wingFlap {
+  0%,100% { transform: rotate(10deg); }
+  50% { transform: rotate(30deg); }
+}
+
+.pg-wing.right { right: -10px; transform: rotate(-5deg); }
+
+.pg-feet { display: flex; gap: 4px; }
+.pg-foot { width: 16px; height: 8px; background: #f0a030; border-radius: 4px; }
+
+.pg-sign {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 2px solid var(--pink);
+  border-radius: 10px;
+  padding: 5px 9px;
+  font-size: 8px;
+  font-family: 'Fredoka One', cursive;
+  color: var(--deep);
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(201,24,74,0.15);
+  animation: signWobble 2s ease-in-out infinite;
+}
+
+@keyframes signWobble {
+  0%,100% { transform: translateX(-50%) rotate(-2deg); }
+  50% { transform: translateX(-50%) rotate(2deg); }
+}
+
+.pg-sign::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--pink);
+}
+
+.pg-hearts {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  animation: pgHeartFloat 2s ease-in-out infinite;
+}
+
+@keyframes pgHeartFloat {
+  0%,100% { transform: translateX(-50%) translateY(0); opacity: 0.7; }
+  50% { transform: translateX(-50%) translateY(-12px); opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- Floating bg hearts -->
+<div class="bg-hearts" id="bgHearts"></div>
+
+<div style="position:relative; z-index:1;">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="tag">💗 a special message</div>
+    <h1>He's sorry,<br>Princess 👑</h1>
+    <p>Even your favourite cartoon characters wanted to come and say it — because you deserve to hear it from everyone.</p>
+  </div>
+
+  <!-- Cards -->
+  <div class="cards">
+
+    <!-- SpongeBob Card -->
+    <div class="card" style="background: linear-gradient(135deg, #fffbe6, #fff9d0);">
+      <div class="corner-heart">🌟</div>
+      <div class="char-scene">
+        <div class="sponge-wrap">
+          <!-- Pants & legs -->
+          <div class="sponge-legs">
+            <div><div class="sponge-leg"></div><div class="sponge-shoe"></div></div>
+            <div><div class="sponge-leg"></div><div class="sponge-shoe"></div></div>
+          </div>
+          <!-- Pants -->
+          <div class="sponge-pants">
+            <div class="sponge-tie"></div>
+          </div>
+          <!-- Arms -->
+          <div class="sponge-arm left"></div>
+          <div class="sponge-arm right"></div>
+          <!-- Flower in hand -->
+          <div class="sponge-flower">🌸</div>
+          <!-- Body -->
+          <div class="sponge-body">
+            <div class="sponge-hole" style="width:8px;height:8px;top:10px;left:12px;"></div>
+            <div class="sponge-hole" style="width:6px;height:6px;top:18px;left:30px;"></div>
+            <div class="sponge-hole" style="width:7px;height:7px;top:6px;left:42px;"></div>
+            <div class="sponge-hole" style="width:5px;height:5px;top:30px;left:18px;"></div>
+          </div>
+          <!-- Head -->
+          <div class="sponge-head">
+            <div class="sponge-hole" style="width:6px;height:6px;top:8px;left:8px;"></div>
+            <div class="sponge-hole" style="width:5px;height:5px;top:14px;left:48px;"></div>
+            <div class="sponge-eyes-row">
+              <div class="sponge-eye"><div class="sponge-pupil"></div></div>
+              <div class="sponge-eye"><div class="sponge-pupil"></div></div>
+            </div>
+            <div class="sponge-smile">
+              <div class="sponge-teeth">
+                <div class="sponge-tooth"></div>
+                <div class="sponge-tooth"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2>SpongeBob SquarePants</h2>
+      <p class="sorry-quote">"I may be a fry cook, but even I know — she deserved better. I'm so sorry, princess! You're the best thing since Krabby Patties! 🍔💛"</p>
+    </div>
+
+    <!-- Tom Card -->
+    <div class="card" style="background: linear-gradient(135deg, #eef4ff, #ddeeff);">
+      <div class="corner-heart">🐾</div>
+      <div class="char-scene">
+        <div class="tom-wrap">
+          <div class="tom-legs">
+            <div class="tom-leg"></div>
+            <div class="tom-leg"></div>
+          </div>
+          <div class="tom-arm left"></div>
+          <div class="tom-arm right"></div>
+          <div class="tom-heart">💙</div>
+          <div class="tom-tail"></div>
+          <div class="tom-body">
+            <div class="tom-tummy"></div>
+          </div>
+          <div class="tom-head">
+            <div class="tom-ears">
+              <div class="tom-ear"></div>
+              <div class="tom-ear"></div>
+            </div>
+            <div class="tom-face-light"></div>
+            <div class="tom-eyes-row">
+              <div class="tom-eye"><div class="tom-pupil"></div></div>
+              <div class="tom-eye"><div class="tom-pupil"></div></div>
+            </div>
+            <div class="tom-nose"></div>
+          </div>
+        </div>
+      </div>
+      <h2>Tom Cat</h2>
+      <p class="sorry-quote">"I chase Jerry everywhere, but I'd never chase away a smile like yours. He's truly sorry, princess — and so am I. 🐱💙"</p>
+    </div>
+
+    <!-- Scooby Card -->
+    <div class="card" style="background: linear-gradient(135deg, #fff4e6, #ffeedd);">
+      <div class="corner-heart">🦴</div>
+      <div class="char-scene">
+        <div class="scooby-wrap">
+          <div class="scooby-legs">
+            <div class="scooby-leg"></div>
+            <div class="scooby-leg"></div>
+          </div>
+          <div class="scooby-paw left"></div>
+          <div class="scooby-paw right"></div>
+          <div class="scooby-treat">🦴</div>
+          <div class="scooby-body">
+            <div class="scooby-spots">
+              <div class="scooby-spot" style="width:10px;height:10px;top:8px;left:6px;"></div>
+              <div class="scooby-spot" style="width:8px;height:8px;top:20px;left:36px;"></div>
+              <div class="scooby-spot" style="width:7px;height:7px;top:36px;left:16px;"></div>
+            </div>
+          </div>
+          <div class="scooby-collar"><div class="scooby-tag"></div></div>
+          <div class="scooby-head">
+            <div class="scooby-ears">
+              <div class="scooby-ear"></div>
+              <div class="scooby-ear"></div>
+            </div>
+            <div class="scooby-eyes-row">
+              <div class="scooby-eye"><div class="scooby-pupil"></div></div>
+              <div class="scooby-eye"><div class="scooby-pupil"></div></div>
+            </div>
+            <div class="scooby-snout">
+              <div class="scooby-nose"></div>
+              <div class="scooby-mouth-smile"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2>Scooby-Doo</h2>
+      <p class="sorry-quote">"Scooby-Dooby-Doo! Even this big goofy dog knows you deserved a hero in that moment. Scooby says sorry, princess! 🐾🧡"</p>
+    </div>
+
+    <!-- Bugs Bunny Card -->
+    <div class="card" style="background: linear-gradient(135deg, #f0fff0, #e0f8e0);">
+      <div class="corner-heart">🥕</div>
+      <div class="char-scene">
+        <div class="bugs-wrap">
+          <div class="bugs-legs">
+            <div><div class="bugs-leg"></div><div class="bugs-foot"></div></div>
+            <div><div class="bugs-leg"></div><div class="bugs-foot"></div></div>
+          </div>
+          <div class="bugs-arm left"></div>
+          <div class="bugs-arm right"></div>
+          <div class="bugs-gloves left"></div>
+          <div class="bugs-gloves right"></div>
+          <div class="bugs-carrot">🥕</div>
+          <div class="bugs-body">
+            <div class="bugs-tummy"></div>
+          </div>
+          <div class="bugs-head">
+            <div class="bugs-ears">
+              <div class="bugs-ear"></div>
+              <div class="bugs-ear"></div>
+            </div>
+            <div class="bugs-face"></div>
+            <div class="bugs-eyes-row">
+              <div class="bugs-eye"><div class="bugs-pupil"></div></div>
+              <div class="bugs-eye"><div class="bugs-pupil"></div></div>
+            </div>
+            <div class="bugs-nose"></div>
+            <div class="bugs-mouth">
+              <div class="bugs-teeth">
+                <div class="bugs-tooth"></div>
+                <div class="bugs-tooth"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2>Bugs Bunny</h2>
+      <p class="sorry-quote">"Eh, what's up doc? Even a wise-guy like me knows — you should've been protected in that moment. Ain't that a stinker. Sorry, princess! 🐰💚"</p>
+    </div>
+
+    <!-- Penguins Card -->
+    <div class="card" style="background: linear-gradient(135deg, #f0f8ff, #e0f0ff); grid-column: 1 / -1; max-width: 420px; margin: 0 auto; width: 100%;">
+      <div class="corner-heart">🐧</div>
+      <div class="char-scene" style="width:100%; height:180px;">
+        <div class="penguins-wrap" style="width:100%; height:100%; position:relative;">
+
+          <!-- Sign -->
+          <div class="pg-sign" style="top:10px; left:50%; font-size:10px;">He's sorry, Princess 💗</div>
+
+          <!-- Hearts between them -->
+          <div class="pg-hearts">💗 💕 💗</div>
+
+          <!-- Penguin left -->
+          <div class="penguin p1">
+            <div class="pg-head">
+              <div class="pg-face"></div>
+              <div class="pg-eyes-row">
+                <div class="pg-eye"><div class="pg-pupil"></div></div>
+                <div class="pg-eye"><div class="pg-pupil"></div></div>
+              </div>
+              <div class="pg-beak"></div>
+            </div>
+            <div class="pg-body">
+              <div class="pg-tummy"></div>
+              <div class="pg-wing left"></div>
+              <div class="pg-wing right"></div>
+            </div>
+            <div class="pg-feet">
+              <div class="pg-foot"></div>
+              <div class="pg-foot"></div>
+            </div>
+          </div>
+
+          <!-- Penguin right -->
+          <div class="penguin p2">
+            <div class="pg-head">
+              <div class="pg-face"></div>
+              <div class="pg-eyes-row">
+                <div class="pg-eye"><div class="pg-pupil"></div></div>
+                <div class="pg-eye"><div class="pg-pupil"></div></div>
+              </div>
+              <div class="pg-beak"></div>
+            </div>
+            <div class="pg-body">
+              <div class="pg-tummy"></div>
+              <div class="pg-wing left"></div>
+              <div class="pg-wing right"></div>
+            </div>
+            <div class="pg-feet">
+              <div class="pg-foot"></div>
+              <div class="pg-foot"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <h2>The Penguins</h2>
+      <p class="sorry-quote">"Cute and cuddly, boys — cute and cuddly. But even we know: protecting the one you love is mission number one. He's sorry he wasn't there for you. We're rooting for you two! 🐧🤍"</p>
+    </div>
+
+
+    <!-- Toothless Card -->
+    <div class="card" style="background: linear-gradient(135deg, #0d1b2a, #1a2a3a); border-color: rgba(0,204,136,0.3);">
+      <div class="corner-heart" style="animation: none; font-size:18px;">🐉</div>
+      <div class="char-scene">
+        <div class="toothless-wrap">
+          <div class="tooth-legs">
+            <div>
+              <div class="tooth-leg"></div>
+              <div class="tooth-claw"><div class="tooth-claw-toe"></div><div class="tooth-claw-toe"></div><div class="tooth-claw-toe"></div></div>
+            </div>
+            <div>
+              <div class="tooth-leg"></div>
+              <div class="tooth-claw"><div class="tooth-claw-toe"></div><div class="tooth-claw-toe"></div><div class="tooth-claw-toe"></div></div>
+            </div>
+          </div>
+          <div class="tooth-wing left"></div>
+          <div class="tooth-wing right"></div>
+          <div class="tooth-tail"></div>
+          <div class="tooth-body"></div>
+          <div class="tooth-fire">🔥</div>
+          <div class="tooth-head">
+            <div class="tooth-ear left"></div>
+            <div class="tooth-ear right"></div>
+            <div class="tooth-eyes-row">
+              <div class="tooth-eye"><div class="tooth-pupil"></div></div>
+              <div class="tooth-eye"><div class="tooth-pupil"></div></div>
+            </div>
+            <div class="tooth-smile"></div>
+          </div>
+        </div>
+      </div>
+      <h2 style="color:#00ffaa;">Toothless 🐉</h2>
+      <p class="sorry-quote" style="color:rgba(200,255,230,0.8);">"Even a Night Fury knows when to bow his head. He's sorry, princess — and if he could fly you to the stars to make it right, he would. 🌌💚"</p>
+    </div>
+
+    <!-- The Croods Card -->
+    <div class="card" style="background: linear-gradient(135deg, #3d1a00, #5a2a00); border-color: rgba(200,116,42,0.3);">
+      <div class="corner-heart" style="font-size:18px;">🦕</div>
+      <div class="char-scene">
+        <div class="croods-wrap">
+          <!-- Grug -->
+          <div class="grug-arm left"></div>
+          <div class="grug-arm right"></div>
+          <div class="grug-club">🪨</div>
+          <div class="grug-body"></div>
+          <div class="grug-legs">
+            <div class="grug-leg"></div>
+            <div class="grug-leg"></div>
+          </div>
+          <div class="grug-head">
+            <div class="grug-brow"></div>
+            <div class="grug-eyes-row">
+              <div class="grug-eye"><div class="grug-pupil"></div></div>
+              <div class="grug-eye"><div class="grug-pupil"></div></div>
+            </div>
+            <div class="grug-nose"></div>
+            <div class="grug-smile"></div>
+          </div>
+
+          <!-- Eep -->
+          <div class="eep-arm left"></div>
+          <div class="eep-arm right"></div>
+          <div class="eep-heart">💗</div>
+          <div class="eep-body"></div>
+          <div class="eep-legs">
+            <div class="eep-leg"></div>
+            <div class="eep-leg"></div>
+          </div>
+          <div class="eep-head">
+            <div class="eep-hair"></div>
+            <div class="eep-eyes-row">
+              <div class="eep-eye"><div class="eep-pupil"></div></div>
+              <div class="eep-eye"><div class="eep-pupil"></div></div>
+            </div>
+            <div class="eep-smile"></div>
+          </div>
+        </div>
+      </div>
+      <h2 style="color:#f0a050;">The Croods 🦕</h2>
+      <p class="sorry-quote" style="color:rgba(255,220,180,0.85);">"Never be afraid. Grug always said: the sun will rise again. He's sorry, princess — and tomorrow is a new beginning, together. 🌅🧡"</p>
+    </div>
+
+  </div>
+  <div class="bottom-msg">
+    <div class="big-text">I'm so sorry, my princess 👑</div>
+    <p class="sub">From the bottom of my heart — and all of theirs.</p>
+    <div class="hearts-bounce">
+      <span>💗</span>
+      <span>💕</span>
+      <span>💗</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Generate floating background hearts
+  const container = document.getElementById('bgHearts');
+  const emojis = ['💗','💕','❤️','💖','🌸','✨','💝'];
+  for (let i = 0; i < 30; i++) {
+    const h = document.createElement('div');
+    h.className = 'bg-heart';
+    h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    h.style.left = (Math.random() * 100) + '%';
+    h.style.setProperty('--s', (14 + Math.random() * 20) + 'px');
+    h.style.setProperty('--d', (6 + Math.random() * 8) + 's');
+    h.style.animationDelay = (Math.random() * 10) + 's';
+    container.appendChild(h);
+  }
+</script>
+</body>
+</html>
